@@ -325,7 +325,7 @@ html, body, #app, #react-root, #page-root, .content {
   overflow: auto; }
 
 .drumkit-bg {
-  background-image: url("/Client/img/bg.jpg");
+  background-image: url("/Drum-Kit/Client/img/bg.jpg");
   background-size: cover; }
 
 .drums {
