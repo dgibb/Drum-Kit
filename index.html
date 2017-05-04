@@ -1,91 +1,35 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>Online Drum Machine</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/Users/Dave/Documents/Github/Bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="CSS.css">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Patua+One|Roboto|Roboto+Slab:700|Montserrat:700|Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="Client/css/css.css">
   </head>
-  
-	<body>
-	
-		<div class="drums">
-			<div data-key="65" class="key">
-				<kbd>A</kbd>
-				<span class="sound">snare</span>
-			</div>
-			<div data-key="83" class="key">
-				<kbd>S</kbd>
-				<span class="sound">clap</span>
-			</div>
-			<div data-key="68" class="key">
-				<kbd>D</kbd>
-				<span class="sound">hihat</span>
-			</div>
-			<div data-key="70" class="key">
-				<kbd>F</kbd>
-				<span class="sound">open</span>
-			</div>
-			<div data-key="71" class="key">
-				<kbd>G</kbd>
-				<span class="sound">crash</span>
-			</div>
-			<div data-key="72" class="key">
-				<kbd>H</kbd>
-				<span class="sound">bass</span>
-			</div>
-			<div data-key="74" class="key">
-				<kbd>J</kbd>
-				<span class="sound">tom</span>
-			</div>
-			<div data-key="75" class="key">
-				<kbd>K</kbd>
-				<span class="sound">ride</span>
-			</div>
-			<div data-key="76" class="key">
-				<kbd>L</kbd>
-				<span class="sound">tink</span>
-			</div>
-  
-  
-  
-  
-		</div>
-	</body>
-	
-	<audio data-key="65" src="boom.wav"></audio>
-	<audio data-key="83" src="clap.wav"></audio>
-	<audio data-key="68" src="hihat.wav"></audio>
-	<audio data-key="70" src="kick.wav"></audio>
-	<audio data-key="71" src="openhat.wav"></audio>
-	<audio data-key="72" src="ride.wav"></audio>
-	<audio data-key="74" src="snare.wav"></audio>
-	<audio data-key="75" src="tink.wav"></audio>
-	<audio data-key="76" src="tom.wav"></audio>
-	
 
-	<script>
-	
-	window.addEventListener('keydown', function(e){
-		const audio= document.querySelector(`audio[data-key="${e.keyCode}"]`);
-		console.log(audio);	
-		const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-		if (!audio) return;
-   
+  <body>
+    <div id="app"></div>
+    <script src ="project demo.min.js"></script>
+  </body>
 
-		key.classList.add('playing');
-		audio.currentTime = 0;
-		audio.play();
-	});
-	
-	const keys = Array.from(document.querySelectorAll('.key'));
-	keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-	function removeTransition(e) {
-    if (e.propertyName !== 'transform') return;
-    e.target.classList.remove('playing');
-	}
-	</script>
- 
- </html>
+  <div id="flappy-images">
+  <img id="birdUp" src="Client/img/Flappy/birdUp.png"
+       width="48" height="48" />
+     <img id="birdDown" src="Client/img/Flappy/birdDown.png"
+       width="48" height="48" />
+      <img id="grass" src="Client/img/Flappy/Grass.png"
+       width="3840" height="228" />
+      <img id="sky" src="Client/img/Flappy/sky.png"
+       width="3840" height="995" />
+      <img id="GameOver" src="Client/img/Flappy/GameOver.png"
+       width="816" height="94" />
+      <img id="pipes" src="Client/img/Flappy/pipes.png"
+       width="100" height="1200" />
+
+</div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</html>
